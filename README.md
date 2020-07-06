@@ -37,12 +37,13 @@ Dentro de la variable **soup** llamamos lo que se encuentra en el script y dentr
 scripts = soup.find_all('script')
 cases = scripts[21]
 ```
-En las siguientes líneas
+En las siguientes líneas convertimos el contenido de **cases** a formato string para poder utilizar la herramienta **.find** y buscar las palabras _'coronavirus-cases-daily'_ dentro del elemento **chart** y definimos **daily_cases** como el contenido de **cases_str** a partir del elemento **index**.
 ```
 cases_str = str(cases.string)
 index = cases_str.find("Highcharts.chart('coronavirus-cases-daily', {")
 daily_cases = cases_str[index:]
 ```
+Generamos el vector **dataString** con un slip seccionado donde definimos el inicio como **cat_start_index** y el final como **cat_end_index**, todo a partir del contenido de las categories de **daily_cases**.
 
 ```
 cat_start_index = daily_cases.find("categories: ")
@@ -51,6 +52,7 @@ cat_end_index = temp.find("]")
 dataString = temp[len("categories: ") : cat_end_index+1]
 ```
 
+De igual forma que lo anterior, generamos el vector **casesString** con un slip seccionado donde definimos el inicio como **data_start_inde**s y el final como **data_end_index**, todo a partir de la data de **daily_cases**.
 ```
 data_start_index = daily_cases.find("data: ")
 temp2 =daily_cases[data_start_index:]
@@ -58,13 +60,13 @@ data_end_index = temp2.find("]")
 casesString = temp2[len("data: ") : data_end_index+1]
 ```
 
+Para presentar el contenido de **dataString** primero generamos una evaluación y posteriormente imprimimos el resultado.
 ```
 Date = ast.literal_eval(dataString)
 print(Date)
 ```
 
+Para presentar el contenido de **casesString** primero sustituimos los elementos _'null'_ y los cambiamos por el valor numerico 0 y al igual que el paso anterior generamos una evaluacion y posteriormente imprimimos el resultado.
 ```
 casesString = casesString.replace('null','0')
 Cases = ast.literal_eval(casesString.strip())
-print(Cases)
-```
