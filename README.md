@@ -43,7 +43,7 @@ cases_str = str(cases.string)
 index = cases_str.find("Highcharts.chart('coronavirus-cases-daily', {")
 daily_cases = cases_str[index:]
 ```
-Generamos el vector **dataString** con un slip seccionado donde definimos el inicio como **cat_start_index** y el final como **cat_end_index**, todo a partir del contenido de las categories de **daily_cases**.
+Generamos el vector **dataString** con un slice seccionado donde definimos el inicio como **cat_start_index** y el final como **cat_end_index**, todo a partir del contenido de las categories de **daily_cases**.
 
 ```
 cat_start_index = daily_cases.find("categories: ")
