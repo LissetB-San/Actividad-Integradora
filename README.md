@@ -15,6 +15,21 @@ Diseñar un web scrapper para la recolección de datos sobre la cantidad diaria 
 
 Se deberán imprimir los datos en dos listas diferentes, la primera tendrá las fechas y se llamará "Date" y la segunda tendrá los casos y se llamará "Cases".
 
+## Instalación
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/).
+
+bash
+pip install requests
+pip install ast
+pip install BeautifulSoup
+pip install matplotlib
+
+## Usage
+
+bash
+python project.py
+
 ## Explicación del código
 Para poder comenzar con el web scrapper, importamos las siguientes librerías:
 ```
