@@ -25,7 +25,7 @@ pip install ast
 pip install BeautifulSoup
 pip install matplotlib
 
-## Usage
+## Uso
 
 bash
 python project.py
