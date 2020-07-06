@@ -52,7 +52,7 @@ cat_end_index = temp.find("]")
 dataString = temp[len("categories: ") : cat_end_index+1]
 ```
 
-De igual forma que lo anterior, generamos el vector **casesString** con un slip seccionado donde definimos el inicio como **data_start_inde**s y el final como **data_end_index**, todo a partir de la data de **daily_cases**.
+De igual forma que lo anterior, generamos el vector **casesString** con un slice seccionado donde definimos el inicio como **data_start_inde**s y el final como **data_end_index**, todo a partir de la data de **daily_cases**.
 ```
 data_start_index = daily_cases.find("data: ")
 temp2 =daily_cases[data_start_index:]
