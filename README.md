@@ -38,7 +38,7 @@ from bs4 import BeautifulSoup
 import ast
 import matplotlib.pyplot as plt
 ```
-Una vez importadas las librerías escribirmos el URL de la página y lo mandamos a llamar. Recupera todos los datos HTML que el servidor devuelve y los almacena en un objeto Python.
+Una vez importadas las librerías escribimos el URL de la página y lo mandamos a llamar. Recupera todos los datos HTML que el servidor devuelve y los almacena en un objeto Python.
 ```
 URL = 'https://www.worldometers.info/coronavirus/'
 page = requests.get(URL)
